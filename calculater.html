@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossOver Calculator</title>
+    
+    <style>
+        /* ========== Calculator ========== */
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: #011627;
+            color: #fdfffc;
+            text-align: center;
+            background-image: url(https://cdn.pixabay.com/photo/2015/07/02/10/13/sky-828648_960_720.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 45px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Display Text Animation with Shadow */
+        input[name="display"] {
+            width: 370px;
+            height: 70px;
+            background-color: #4c555c;
+            color: white;
+            font-size: 45px;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow effect */
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            animation: fadeInDisplay 1s ease-out;
+        }
+
+        input[name="display"]:focus {
+            background-color: #2e3b40;
+            color: #f1f1f1;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); /* Stronger shadow on focus */
+        }
+
+        /* Button Styling */
+        input {
+            width: 75px;
+            height: 50px;
+            font-size: 45px;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: white;
+            color: black;
+            border-style: none;
+            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+        }
+
+        /* Button Hover Effect with Glow */
+        .btn:hover {
+            background-color: yellow;
+            cursor: pointer;
+            transform: scale(1.1); /* Scale up button */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+            animation: glow 0.5s ease-in-out infinite alternate;
+        }
+
+        /* Button Press Animation with Shadow */
+        .btn:active {
+            transform: scale(0.9); /* Scale down button when clicked */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow on click */
+        }
+
+        /* Button-specific Color Styles */
+        .btn-add { background-color: #cc5c11; }
+        .btn-subtract { background-color: #ba55d3; }
+        .btn-multiply { background-color: #7db1b2; }
+        .btn-divide { background-color: #1f80c9; }
+        .btn-clear { background-color: #cc0000; }
+
+        /* Button Shake Animation for Reset */
+        .btn-clear:active {
+            animation: shake 0.3s ease-in-out;
+        }
+
+        /* Glow Animation */
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px rgba(255, 255, 0, 1), 0 0 10px rgba(255, 255, 0, 1);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 255, 0, 1), 0 0 30px rgba(255, 255, 0, 1);
+            }
+        }
+
+        /* Shake Animation for the Clear Button */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Fade-in Animation for Display */
+        @keyframes fadeInDisplay {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Fade-in Animation for Heading */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+
+
+
+
+
+
+
+
+
+
+/*=========================================last button of next page  ==========================================*/
+
+
+
+
+
+.nextcal{
+  padding: 0 0 0 640px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1>CrossOver Calculator</h1>
+    <form action="" name="clc">
+        <input type="text" name="display"><br>
+        <input class="btn" type="button" value="0" onclick="clc.display.value += '0'">
+        <input class="btn" type="button" value="1" onclick="clc.display.value += '1'">
+        <input class="btn" type="button" value="2" onclick="clc.display.value += '2'">
+        <input class="btn btn-add" type="button" value="+" onclick="clc.display.value += '+'"><br>
+        <input class="btn" type="button" value="3" onclick="clc.display.value += '3'">
+        <input class="btn" type="button" value="4" onclick="clc.display.value += '4'">
+        <input class="btn" type="button" value="5" onclick="clc.display.value += '5'">
+        <input class="btn btn-subtract" type="button" value="-" onclick="clc.display.value += '-'"><br>
+        <input class="btn" type="button" value="6" onclick="clc.display.value += '6'">
+        <input class="btn" type="button" value="7" onclick="clc.display.value += '7'">
+        <input class="btn" type="button" value="8" onclick="clc.display.value += '8'">
+        <input class="btn btn-multiply" type="button" value="*" onclick="clc.display.value += '*'"><br>
+        <input class="btn" type="button" value="9" onclick="clc.display.value += '9'">
+        <input class="btn btn-clear" type="button" value="C" onclick="clc.display.value =''">
+        <input class="btn" type="button" value="=" onclick="clc.display.value = eval(clc.display.value)">
+        <input class="btn btn-divide" type="button" value="&#247;" onclick="clc.display.value += '/'">
+    </form>
+
+
+
+
+
+
+
+
+
+    
+
+
+<div class="nextcal">
+    &lt; &lt; &lt;&lt;<a href="cindex.html" target="_blank">Cart Assignment</a> &gt;&gt;&gt;&gt;
+  </div>
+  
+  
+
+  
+
+</body>
+</html>
